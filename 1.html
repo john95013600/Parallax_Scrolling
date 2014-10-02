@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		body,html{
+			height: 100%;
+		}
+		.fix-bg{
+			min-height: 70%;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+		}
+		.fix-bg.bg1{
+			background-image:url(http://themetrust.com/demos/hero/wp-content/uploads/home_banner_mountains_2.jpg);
+		}
+		.fix-bg.bg2{
+			background-image: url(1.jpg);
+		}
+		.src{
+			height: 50%;
+		}
+		#title1{
+			padding-top: 15%;
+			text-align: center;
+			color: #FFFFFF;
+			font-family: "微軟正黑體","serif";
+			font-size: 64px;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(this).scroll(function(){
+				var a=window.scrollY/(document.body.clientHeight*0.6);
+				if(a>1) a=1;
+				console.log(1-a);
+
+				$("#title1").css("opacity",1-a);
+
+
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div class='src' style='background:#ffffff'></div>
+	<div class='fix-bg bg1'><h1 id='title1'>MY SCROLL</h1></div>
+	<div class='src' style='background:firebrick'><h1 style="text-align:center; padding-top:10%">Time To Fight!</h1> </div>
+	<div class='fix-bg bg2'></div>
+	<div class='src' style='background:#37c; height:3%;'>
+		<p style="text-align:center">©2008 -2013 by ant2legs, All Rights Reserved.</p> 
+	</div>
+</body>
+</html>
